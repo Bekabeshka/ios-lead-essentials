@@ -10,7 +10,12 @@ import EssentialFeed
 
 class HTTPClientSpy: HTTPClient {
     var requestedURLs: [URL] = []
-    func get(from url: URL) {
+    var error: Error?
+    
+    func get(from url: URL, completion: @escaping ((Error) -> Void)) {
+        if let error = error {
+            completion(error)
+        }
         requestedURLs.append(url)
     }
 }
@@ -37,6 +42,14 @@ final class RemoteFeedLoaderTests: XCTestCase {
         sut.load()
         XCTAssertEqual(2, client.requestedURLs.count)
         XCTAssertEqual(url, client.requestedURLs.first)
+    }
+    
+    func test_load_deliversErrorOnClientError() {
+        let url = URL(string: "http://yatorogod.com")!
+        let (sut, client) = makeSUT(url: url)
+        var capturesError: Error?
+        sut.load { error in capturesError = error }
+        XCTAssertEqual(capturesError, RemoteFeedLoader.Error.connectivity)
     }
     
     private func makeSUT(url: URL) -> (RemoteFeedLoader, HTTPClientSpy) {
