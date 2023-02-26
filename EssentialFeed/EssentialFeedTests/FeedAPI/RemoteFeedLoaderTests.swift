@@ -114,9 +114,7 @@ private extension RemoteFeedLoaderTests {
     ) -> (RemoteFeedLoader, HTTPClientSpy) {
         let httpClient = HTTPClientSpy()
         let remoteLoader = RemoteFeedLoader(url: url, client: httpClient)
-        addTeardownBlock { [weak remoteLoader] in
-            XCTAssertNil(remoteLoader, "Instance should have been deallocated", file: file, line: line)
-        }
+        trackForMemoryLeaks(remoteLoader)
         return (remoteLoader, httpClient)
     }
     
