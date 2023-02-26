@@ -24,20 +24,20 @@ class URLSessionHTTPClientTests: XCTestCase {
     
     func test_getFromURL_performsGETRequestWithURL() {
         let url = anyURL()
-        let exp = expectation(description: "Wait for request")
         
+        var receivedReqeusts: [URLRequest] = []
         URLProtocolStub.observeRequests { request in
-            XCTAssertEqual(request.url, url)
-            XCTAssertEqual(request.httpMethod, "GET")
-            exp.fulfill()
+            receivedReqeusts.append(request)
         }
         
-        let exp2 = expectation(description: "Wait for request completion")
-        makeSUT().get(from: url) { _ in
-            exp.fulfill()
-        }
+        let exp = expectation(description: "Wait for request completion")
+        makeSUT().get(from: url) { _ in exp.fulfill() }
         
-        wait(for: [exp, exp2], timeout: 1.0)
+        wait(for: [exp], timeout: 1.0)
+        
+        XCTAssertEqual(receivedReqeusts.count, 1)
+        XCTAssertEqual(receivedReqeusts.first?.url, url)
+        XCTAssertEqual(receivedReqeusts.first?.httpMethod, "GET")
     }
     
     func test_getFromURL_failsOnRequestError() {
@@ -45,7 +45,7 @@ class URLSessionHTTPClientTests: XCTestCase {
         
         let receivedError = resultErrorFor(data: nil, response: nil, error: requestError)! as NSError
         
-        XCTAssertEqual(receivedError! as NSError , requestError)
+        XCTAssertEqual(receivedError, requestError)
     }
     
     func test_getFromURL_failsOnAllInvalidRepresentationCases() {
