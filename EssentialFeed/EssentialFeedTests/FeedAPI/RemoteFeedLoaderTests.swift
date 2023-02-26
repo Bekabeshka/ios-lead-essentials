@@ -103,9 +103,11 @@ final class RemoteFeedLoaderTests: XCTestCase {
         
         XCTAssertTrue(capturedResults.isEmpty)
     }
-    
-    // MARK: - Helpers
-    private func makeSUT(
+}
+
+// MARK: - Helpers
+private extension RemoteFeedLoaderTests {
+    func makeSUT(
         url: URL = URL(string: "http://yatorogod.com")!,
         file: StaticString = #file,
         line: UInt = #line
@@ -118,13 +120,13 @@ final class RemoteFeedLoaderTests: XCTestCase {
         return (remoteLoader, httpClient)
     }
     
-    private func makeItemJSON(_ items: [[String: Any]]) -> Data {
+    func makeItemJSON(_ items: [[String: Any]]) -> Data {
         let itemsJSON = ["items": items]
         let json = try! JSONSerialization.data(withJSONObject: itemsJSON)
         return json
     }
     
-    private func makeItem(id: UUID, description: String? = nil, location: String? = nil, imageURL: URL) -> (model: FeedItem, json: [String: Any]) {
+    func makeItem(id: UUID, description: String? = nil, location: String? = nil, imageURL: URL) -> (model: FeedItem, json: [String: Any]) {
         let item = FeedItem(id: id, description: description, location: location, imageURL: imageURL)
         let json = [
             "id": id.uuidString,
@@ -140,11 +142,11 @@ final class RemoteFeedLoaderTests: XCTestCase {
         return (item, json)
     }
     
-    private func failure(_ error: RemoteFeedLoader.Error) -> RemoteFeedLoader.Result {
+    func failure(_ error: RemoteFeedLoader.Error) -> RemoteFeedLoader.Result {
         return .failure(error)
     }
     
-    private func expect(_ sut: RemoteFeedLoader, toCompleteWithResult expectedResult: RemoteFeedLoader.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
+    func expect(_ sut: RemoteFeedLoader, toCompleteWithResult expectedResult: RemoteFeedLoader.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
         let exp = expectation(description: "Wait for load completion")
         sut.load { receivedResults in
             switch (receivedResults, expectedResult) {
@@ -162,7 +164,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
     
-    private class HTTPClientSpy: HTTPClient {
+    class HTTPClientSpy: HTTPClient {
         var requestedURLs: [URL] {
             return messages.map { $0.url }
         }
