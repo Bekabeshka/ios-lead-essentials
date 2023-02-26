@@ -63,7 +63,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
         let (sut, client) = makeSUT()
         
         expect(sut, toCompleteWithResult: .success([])) {
-            let emptyListJson = Data(bytes: "{\"items\": []}".utf8)
+            let emptyListJson = makeItemJSON([])
             client.complete(withStatusCode: 200, data: emptyListJson)
         }
     }
@@ -71,8 +71,16 @@ final class RemoteFeedLoaderTests: XCTestCase {
     func test_load_delivaersErrorOn200HTPPResponseWithJSONItems() {
         let (sut, client) = makeSUT()
         
-        let item1 = makeItem(id: UUID(), description: nil, location: nil, imageURL: URL(string: "http://yatorogod.com")!)
-        let item2 = makeItem(id: UUID(), description: "description", location: "location", imageURL: URL(string: "http://yatorogod.com")!)
+        let item1 = makeItem(
+            id: UUID(),
+            imageURL: URL(string: "http://yatorogod.com")!
+        )
+        let item2 = makeItem(
+            id: UUID(),
+            description: "description",
+            location: "location",
+            imageURL: URL(string: "http://yatorogod.com")!
+        )
         
         let items = [item1.model, item2.model]
         
@@ -82,9 +90,31 @@ final class RemoteFeedLoaderTests: XCTestCase {
         }
     }
     
-    private func makeSUT(url: URL = URL(string: "http://yatorogod.com")!) -> (RemoteFeedLoader, HTTPClientSpy) {
+    func test_load_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
+        let url = URL(string: "http://yatorogod.com")!
+        let client = HTTPClientSpy()
+        var sut: RemoteFeedLoader? = RemoteFeedLoader(url: url, client: client)
+        
+        var capturedResults: [RemoteFeedLoader.Result] = []
+        sut?.load { capturedResults.append($0) }
+        
+        sut = nil
+        client.complete(withStatusCode: 200, data: makeItemJSON([]))
+        
+        XCTAssertTrue(capturedResults.isEmpty)
+    }
+    
+    // MARK: - Helpers
+    private func makeSUT(
+        url: URL = URL(string: "http://yatorogod.com")!,
+        file: StaticString = #file,
+        line: UInt = #line
+    ) -> (RemoteFeedLoader, HTTPClientSpy) {
         let httpClient = HTTPClientSpy()
         let remoteLoader = RemoteFeedLoader(url: url, client: httpClient)
+        addTeardownBlock { [weak remoteLoader] in
+            XCTAssertNil(remoteLoader, "Instance should have been deallocated", file: file, line: line)
+        }
         return (remoteLoader, httpClient)
     }
     
@@ -111,10 +141,10 @@ final class RemoteFeedLoaderTests: XCTestCase {
     }
     
     private func expect(_ sut: RemoteFeedLoader, toCompleteWithResult result: RemoteFeedLoader.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
-        var capturesResults: [RemoteFeedLoader.Result] = []
-        sut.load { capturesResults.append($0) }
+        var capturedResults: [RemoteFeedLoader.Result] = []
+        sut.load { capturedResults.append($0) }
         action()
-        XCTAssertEqual(capturesResults, [result], file: file, line: line)
+        XCTAssertEqual(capturedResults, [result], file: file, line: line)
     }
     
     private class HTTPClientSpy: HTTPClient {
