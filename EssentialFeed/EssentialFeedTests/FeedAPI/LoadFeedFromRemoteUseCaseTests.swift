@@ -1,5 +1,5 @@
 //
-//  RemoteFeedLoaderTests.swift
+//  LoadFeedFromRemoteUseCaseTests.swift
 //  EssentialFeedTests
 //
 //  Created by bekabeshka on 20.02.2023.
@@ -8,7 +8,7 @@
 import XCTest
 import EssentialFeed
 
-final class RemoteFeedLoaderTests: XCTestCase {
+final class LoadFeedFromRemoteUseCaseTests: XCTestCase {
     func test_init_doesNotReqeustDataFromURL() {
         let (_, client) = makeSUT()
         
@@ -106,7 +106,7 @@ final class RemoteFeedLoaderTests: XCTestCase {
 }
 
 // MARK: - Helpers
-private extension RemoteFeedLoaderTests {
+private extension LoadFeedFromRemoteUseCaseTests {
     func makeSUT(
         url: URL = URL(string: "http://yatorogod.com")!,
         file: StaticString = #file,
