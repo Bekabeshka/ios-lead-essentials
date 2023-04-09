@@ -26,17 +26,25 @@ public class LocalFeedLoader {
             guard let self else { return }
             switch result {
             case let .failure(error):
+                self.store.deleteCachedFeed { _ in }
                 completion(.failure(error))
             case let .found(feed, timestamp) where self.validate(timestamp):
                 completion(.success(feed.toModels()))
-            case .empty, .found:
+            case .found:
+                self.store.deleteCachedFeed { _ in }
+                completion(.success([]))
+            case .empty:
                 completion(.success([]))
             }
         }
     }
     
+    private var maxCacheAgeInDays: Int {
+        return 7
+    }
+    
     private func validate(_ timestamp: Date) -> Bool {
-        guard let maxCachedAge = calendar.date(byAdding: .day, value: 7, to: timestamp) else { return false }
+        guard let maxCachedAge = calendar.date(byAdding: .day, value: maxCacheAgeInDays, to: timestamp) else { return false }
         return currentDate() < maxCachedAge
     }
     
