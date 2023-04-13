@@ -5,6 +5,7 @@
 //  Created by bekabeshka on 12.04.2023.
 //
 
+import Foundation
 import EssentialFeed
 
 func uniqueImage() -> FeedImage {
@@ -12,17 +13,27 @@ func uniqueImage() -> FeedImage {
 }
 
 func uniqueImageFeed() -> (models: [FeedImage], local: [LocalFeedImage]) {
-    let feed = [uniqueImage(), uniqueImage()]
-    let localFeed = feed.map { LocalFeedImage(id: $0.id, description: $0.description, location: $0.location, url: $0.url) }
-    return (feed, localFeed)
+    let models = [uniqueImage(), uniqueImage()]
+    let local = models.map { LocalFeedImage(id: $0.id, description: $0.description, location: $0.location, url: $0.url) }
+    return (models, local)
 }
 
 extension Date {
-    func adding(days: Int) -> Date {
-        return Calendar(identifier: .gregorian).date(byAdding: .day, value: days, to: self)!
+    func minusFeedCacheMaxAge() -> Date {
+        return adding(days: -feedCacheMaxAgeInDays)
     }
     
-    func adding(seconds: Int) -> Date {
-        return Calendar(identifier: .gregorian).date(byAdding: .second, value: seconds, to: self)!
+    private var feedCacheMaxAgeInDays: Int {
+        return 7
+    }
+    
+    private func adding(days: Int) -> Date {
+        return Calendar(identifier: .gregorian).date(byAdding: .day, value: days, to: self)!
+    }
+}
+
+extension Date {
+    func adding(seconds: TimeInterval) -> Date {
+        return self + seconds
     }
 }
