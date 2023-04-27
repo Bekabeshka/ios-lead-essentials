@@ -45,12 +45,12 @@ public final class CodableFeedStore: FeedStore {
     public func retrieve(completion: @escaping FeedStore.RetrievalCompletion) {
         queue.async { [storeURL] in
             guard let data = try? Data(contentsOf: storeURL) else {
-                return completion(.empty)
+                return completion(.success(nil))
             }
             do {
                 let decoder = JSONDecoder()
                 let cache = try decoder.decode(Cache.self, from: data)
-                completion(.found(feed: cache.loadFeed, timestamp: cache.timestamp))
+                completion(.success(CachedFeed(feed: cache.loadFeed, timestamp: cache.timestamp)))
             } catch {
                 completion(.failure(error))
             }

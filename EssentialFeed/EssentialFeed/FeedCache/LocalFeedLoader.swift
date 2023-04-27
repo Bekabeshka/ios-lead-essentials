@@ -41,7 +41,7 @@ extension LocalFeedLoader {
 }
 
 extension LocalFeedLoader: FeedLoader {
-    public typealias LoadResult = LoadFeedResult
+    public typealias LoadResult = FeedLoader.Result
     
     public func load(completion: @escaping (LoadResult) -> Void) {
         store.retrieve { [weak self] result in
@@ -49,10 +49,13 @@ extension LocalFeedLoader: FeedLoader {
             switch result {
             case let .failure(error):
                 completion(.failure(error))
-            case let .found(feed, timestamp) where FeedCachePolicy.validate(timestamp, against: self.currentDate()):
-                completion(.success(feed.toModels()))
-            case .found, .empty:
-                completion(.success([]))
+            case let .success(cachedFeed):
+                switch cachedFeed {
+                case let .some(cache) where FeedCachePolicy.validate(cache.timestamp, against: self.currentDate()):
+                    completion(.success(cache.feed.toModels()))
+                case .some, .none:
+                    completion(.success([]))
+                }
             }
         }
     }
@@ -65,9 +68,12 @@ extension LocalFeedLoader {
             switch result {
             case .failure:
                 self.store.deleteCachedFeed(completion: { _ in })
-            case let .found(_, timestamp) where !FeedCachePolicy.validate(timestamp, against: self.currentDate()):
-                self.store.deleteCachedFeed(completion: { _ in })
-            case .empty, .found: break
+            case let .success(cacheFeed):
+                switch cacheFeed {
+                case let .some(cache) where !FeedCachePolicy.validate(cache.timestamp, against: self.currentDate()):
+                    self.store.deleteCachedFeed(completion: { _ in })
+                case .none, .some: break
+                }
             }
         }
         
