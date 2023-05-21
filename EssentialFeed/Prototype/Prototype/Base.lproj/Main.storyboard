@@ -115,12 +115,6 @@ Description Description Description Description </string>
                                         <constraint firstItem="06d-gV-2eO" firstAttribute="top" secondItem="8Sf-vb-cxM" secondAttribute="topMargin" priority="999" constant="6" id="WZ2-8f-wDC"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="descriptionLabel" destination="9AV-yZ-Kdg" id="eDA-0X-KFX"/>
-                                    <outlet property="feedImageView" destination="8Z7-KU-PFd" id="QaL-a8-TMW"/>
-                                    <outlet property="locationContainer" destination="xE5-0H-RE5" id="9Zb-oj-6tv"/>
-                                    <outlet property="locationLabel" destination="B78-3m-Giu" id="Azc-Yf-5eA"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
