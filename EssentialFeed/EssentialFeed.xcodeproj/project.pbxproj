@@ -45,6 +45,12 @@
 		455E1A7B29E2AA020019B7C2 /* LocalFeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455E1A7A29E2AA020019B7C2 /* LocalFeedImage.swift */; };
 		455E1A7D29E2BAAA0019B7C2 /* LoadFeedFromCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455E1A7C29E2BAAA0019B7C2 /* LoadFeedFromCacheUseCaseTests.swift */; };
 		455E1A8029E2BB2F0019B7C2 /* FeedStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455E1A7F29E2BB2F0019B7C2 /* FeedStoreSpy.swift */; };
+		4577633B2A1F054900DF7BF1 /* Feed.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4577633D2A1F054900DF7BF1 /* Feed.strings */; };
+		457763402A1F08E600DF7BF1 /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4577633F2A1F08E600DF7BF1 /* MainQueueDispatchDecorator.swift */; };
+		457763422A1F090000DF7BF1 /* WeakRefVirtualProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457763412A1F090000DF7BF1 /* WeakRefVirtualProxy.swift */; };
+		457763442A1F091400DF7BF1 /* FeedViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457763432A1F091400DF7BF1 /* FeedViewAdapter.swift */; };
+		457763462A1F093A00DF7BF1 /* FeedImageDataLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457763452A1F093A00DF7BF1 /* FeedImageDataLoaderPresentationAdapter.swift */; };
+		457763482A1F094E00DF7BF1 /* FeedLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457763472A1F094E00DF7BF1 /* FeedLoaderPresentationAdapter.swift */; };
 		459D645429A3AF4D00A92ED0 /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459D644B29A3AF4D00A92ED0 /* EssentialFeed.framework */; };
 		459D645A29A3AF4D00A92ED0 /* EssentialFeed.h in Headers */ = {isa = PBXBuildFile; fileRef = 459D644E29A3AF4D00A92ED0 /* EssentialFeed.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		459D646429A3AF8F00A92ED0 /* FeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459D646329A3AF8F00A92ED0 /* FeedImage.swift */; };
@@ -161,6 +167,13 @@
 		455E1A7A29E2AA020019B7C2 /* LocalFeedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedImage.swift; sourceTree = "<group>"; };
 		455E1A7C29E2BAAA0019B7C2 /* LoadFeedFromCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFeedFromCacheUseCaseTests.swift; sourceTree = "<group>"; };
 		455E1A7F29E2BB2F0019B7C2 /* FeedStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStoreSpy.swift; sourceTree = "<group>"; };
+		4577633C2A1F054900DF7BF1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Feed.strings; sourceTree = "<group>"; };
+		4577633E2A1F057200DF7BF1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Feed.strings; sourceTree = "<group>"; };
+		4577633F2A1F08E600DF7BF1 /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
+		457763412A1F090000DF7BF1 /* WeakRefVirtualProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakRefVirtualProxy.swift; sourceTree = "<group>"; };
+		457763432A1F091400DF7BF1 /* FeedViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewAdapter.swift; sourceTree = "<group>"; };
+		457763452A1F093A00DF7BF1 /* FeedImageDataLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
+		457763472A1F094E00DF7BF1 /* FeedLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
 		459D644B29A3AF4D00A92ED0 /* EssentialFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		459D644E29A3AF4D00A92ED0 /* EssentialFeed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EssentialFeed.h; sourceTree = "<group>"; };
 		459D645329A3AF4D00A92ED0 /* EssentialFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -283,6 +296,11 @@
 			isa = PBXGroup;
 			children = (
 				45355D882A08FA3D00D47963 /* FeedUIComposer.swift */,
+				4577633F2A1F08E600DF7BF1 /* MainQueueDispatchDecorator.swift */,
+				457763412A1F090000DF7BF1 /* WeakRefVirtualProxy.swift */,
+				457763432A1F091400DF7BF1 /* FeedViewAdapter.swift */,
+				457763452A1F093A00DF7BF1 /* FeedImageDataLoaderPresentationAdapter.swift */,
+				457763472A1F094E00DF7BF1 /* FeedLoaderPresentationAdapter.swift */,
 			);
 			path = Composer;
 			sourceTree = "<group>";
@@ -295,6 +313,7 @@
 				45355D932A09268300D47963 /* FeedImageViewModel.swift */,
 				45355D952A0926A900D47963 /* FeedViewModel.swift */,
 				45355D972A0926BA00D47963 /* FeedLoadingViewModel.swift */,
+				4577633D2A1F054900DF7BF1 /* Feed.strings */,
 			);
 			path = FeedPresentation;
 			sourceTree = "<group>";
@@ -674,6 +693,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 459D644129A3AF4D00A92ED0;
 			productRefGroup = 459D644C29A3AF4D00A92ED0 /* Products */;
@@ -725,6 +745,7 @@
 			files = (
 				45DFCCD32A1A521F00FDBC13 /* Feed.storyboard in Resources */,
 				45DFCCD52A1A528400FDBC13 /* Feed.xcassets in Resources */,
+				4577633B2A1F054900DF7BF1 /* Feed.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -810,9 +831,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				45355D902A09180700D47963 /* FeedPresenter.swift in Sources */,
+				457763402A1F08E600DF7BF1 /* MainQueueDispatchDecorator.swift in Sources */,
+				457763422A1F090000DF7BF1 /* WeakRefVirtualProxy.swift in Sources */,
 				453323332A08ECF70040D791 /* FeedImageDataLoader.swift in Sources */,
 				45D74DFD29FE9A9300EA049C /* UIView+Shimmering.swift in Sources */,
 				45355D832A08F0B800D47963 /* FeedRefreshViewController.swift in Sources */,
+				457763462A1F093A00DF7BF1 /* FeedImageDataLoaderPresentationAdapter.swift in Sources */,
 				45355D942A09268300D47963 /* FeedImageViewModel.swift in Sources */,
 				45DFCCD72A1A5CF100FDBC13 /* UITableView+Dequeueing.swift in Sources */,
 				45355D962A0926A900D47963 /* FeedViewModel.swift in Sources */,
@@ -821,6 +845,8 @@
 				45355D982A0926BA00D47963 /* FeedLoadingViewModel.swift in Sources */,
 				45D74DFB29FE836300EA049C /* FeedImageCell.swift in Sources */,
 				45355D852A08F39100D47963 /* FeedImageCellController.swift in Sources */,
+				457763482A1F094E00DF7BF1 /* FeedLoaderPresentationAdapter.swift in Sources */,
+				457763442A1F091400DF7BF1 /* FeedViewAdapter.swift in Sources */,
 				45355D892A08FA3D00D47963 /* FeedUIComposer.swift in Sources */,
 				45355D922A09214F00D47963 /* FeedImagePresenter.swift in Sources */,
 			);
@@ -865,6 +891,18 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		4577633D2A1F054900DF7BF1 /* Feed.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4577633C2A1F054900DF7BF1 /* en */,
+				4577633E2A1F057200DF7BF1 /* ru */,
+			);
+			name = Feed.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		453DEBEA29EBF722002560E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -900,6 +938,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -963,6 +1002,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

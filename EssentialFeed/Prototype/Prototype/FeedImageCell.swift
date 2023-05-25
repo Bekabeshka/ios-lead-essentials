@@ -16,7 +16,7 @@ final class FeedImageCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        feedImageView.alpha = 0
+//        feedImageView.alpha = 0
     }
 
     override func prepareForReuse() {
