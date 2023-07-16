@@ -1,8 +1,8 @@
 //
 //  FeedImageDataLoader.swift
-//  EssentialFeediOS
+//  EssentialFeed
 //
-//  Created by bekabeshka on 08.05.2023.
+//  Created by bekabeshka on 16.07.2023.
 //
 
 import Foundation
