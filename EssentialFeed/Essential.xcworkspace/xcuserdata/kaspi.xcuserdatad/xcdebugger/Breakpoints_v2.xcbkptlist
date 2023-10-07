@@ -20,53 +20,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A672A998-0CF8-4A92-9358-20BB5D4AA1C0"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EssentialFeed/Feed API/URLSessionHTTPClient.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "get(from:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A672A998-0CF8-4A92-9358-20BB5D4AA1C0 - 3394e86d83d4a5ce"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EssentialFeed.URLSessionHTTPClient.get(from: Foundation.URL, completion: (Swift.Result&lt;(Foundation.Data, __C.NSHTTPURLResponse), Swift.Error&gt;) -&gt; ()) -&gt; EssentialFeed.HTTPClientTask"
-                  moduleName = "EssentialFeed"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kaspi/Desktop/essentials/ios-lead-essentials/EssentialFeed/EssentialFeed/Feed%20API/URLSessionHTTPClient.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "224">
-               </Location>
-               <Location
-                  uuid = "A672A998-0CF8-4A92-9358-20BB5D4AA1C0 - 39e16b17297041f3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () throws -&gt; (Foundation.Data, __C.NSHTTPURLResponse) in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in EssentialFeed.URLSessionHTTPClient.get(from: Foundation.URL, completion: (Swift.Result&lt;(Foundation.Data, __C.NSHTTPURLResponse), Swift.Error&gt;) -&gt; ()) -&gt; EssentialFeed.HTTPClientTask"
-                  moduleName = "EssentialFeed"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kaspi/Desktop/essentials/ios-lead-essentials/EssentialFeed/EssentialFeed/Feed%20API/URLSessionHTTPClient.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "240">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
