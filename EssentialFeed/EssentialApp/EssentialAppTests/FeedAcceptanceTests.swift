@@ -8,6 +8,8 @@
 import XCTest
 import EssentialFeed
 import EssentialFeediOS
+import EssentialFeedCache
+import EssentialFeedAPI
 @testable import EssentialApp
 
 final class FeedAcceptanceTests: XCTestCase {

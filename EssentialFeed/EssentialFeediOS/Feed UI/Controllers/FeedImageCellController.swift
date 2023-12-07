@@ -4,6 +4,7 @@
 
 import UIKit
 import EssentialFeed
+import EssentialFeedPresentation
 
 public protocol FeedImageCellControllerDelegate {
 	func didRequestImage()

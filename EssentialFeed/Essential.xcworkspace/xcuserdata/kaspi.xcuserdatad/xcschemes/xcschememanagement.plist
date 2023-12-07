@@ -11,6 +11,8 @@
 		</dict>
 		<key>EssentialApp.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
