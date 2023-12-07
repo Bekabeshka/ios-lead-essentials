@@ -239,12 +239,7 @@
 		456EAE772A87952700E085E9 /* EssentialApp */ = {
 			isa = PBXGroup;
 			children = (
-				45C8FFBD2AD2DDA200FAA542 /* FeedUIComposer.swift */,
-				45C8FFBB2AD2DDA200FAA542 /* MainQueueDispatchDecorator.swift */,
-				45C8FFBC2AD2DDA200FAA542 /* WeakRefVirtualProxy.swift */,
-				45C8FFB22AD2DDA200FAA542 /* FeedImageDataLoaderPresentationAdapter.swift */,
-				45C8FFBA2AD2DDA200FAA542 /* FeedLoaderPresentationAdapter.swift */,
-				45C8FFB92AD2DDA200FAA542 /* FeedViewAdapter.swift */,
+				45D4B4912B222A7D005321BB /* Composers */,
 				456EAE782A87952700E085E9 /* AppDelegate.swift */,
 				456EAE7A2A87952700E085E9 /* SceneDelegate.swift */,
 				456EAE7C2A87952700E085E9 /* ViewController.swift */,
@@ -279,6 +274,19 @@
 				456EAEA12A87967400E085E9 /* EssentialFeediOSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		45D4B4912B222A7D005321BB /* Composers */ = {
+			isa = PBXGroup;
+			children = (
+				45C8FFBD2AD2DDA200FAA542 /* FeedUIComposer.swift */,
+				45C8FFBB2AD2DDA200FAA542 /* MainQueueDispatchDecorator.swift */,
+				45C8FFBC2AD2DDA200FAA542 /* WeakRefVirtualProxy.swift */,
+				45C8FFB22AD2DDA200FAA542 /* FeedImageDataLoaderPresentationAdapter.swift */,
+				45C8FFBA2AD2DDA200FAA542 /* FeedLoaderPresentationAdapter.swift */,
+				45C8FFB92AD2DDA200FAA542 /* FeedViewAdapter.swift */,
+			);
+			path = Composers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
