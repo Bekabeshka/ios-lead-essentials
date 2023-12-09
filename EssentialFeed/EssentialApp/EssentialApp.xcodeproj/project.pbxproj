@@ -45,6 +45,10 @@
 		45D4B5BB2B224775005321BB /* EssentialFeedCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D4B5B22B22458E005321BB /* EssentialFeedCache.framework */; };
 		45D4B5BC2B224775005321BB /* EssentialFeedCache.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45D4B5B22B22458E005321BB /* EssentialFeedCache.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		45D4B5C12B225529005321BB /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D4B5BF2B2254BE005321BB /* MainQueueDispatchDecorator.swift */; };
+		45D4B6612B24B927005321BB /* EssentialFeedAPIInfrastructure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D4B65E2B24B927005321BB /* EssentialFeedAPIInfrastructure.framework */; };
+		45D4B6622B24B927005321BB /* EssentialFeedAPIInfrastructure.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45D4B65E2B24B927005321BB /* EssentialFeedAPIInfrastructure.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		45D4B68E2B24BA64005321BB /* EssentialFeedCacheInfrastructure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D4B68B2B24BA63005321BB /* EssentialFeedCacheInfrastructure.framework */; };
+		45D4B68F2B24BA64005321BB /* EssentialFeedCacheInfrastructure.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45D4B68B2B24BA63005321BB /* EssentialFeedCacheInfrastructure.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +143,34 @@
 			remoteGlobalIDString = 45D4B57F2B2243FF005321BB;
 			remoteInfo = EssentialFeedPresentationTests;
 		};
+		45D4B65D2B24B927005321BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 456EAE8D2A87967400E085E9 /* EssentialFeed.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45D4B62F2B24B805005321BB;
+			remoteInfo = EssentialFeedAPIInfrastructure;
+		};
+		45D4B65F2B24B927005321BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 456EAE8D2A87967400E085E9 /* EssentialFeed.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45D4B6362B24B805005321BB;
+			remoteInfo = EssentialFeedAPIInfrastructureTests;
+		};
+		45D4B68A2B24BA63005321BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 456EAE8D2A87967400E085E9 /* EssentialFeed.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45D4B6682B24B9CB005321BB;
+			remoteInfo = EssentialFeedCacheInfrastructure;
+		};
+		45D4B68C2B24BA63005321BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 456EAE8D2A87967400E085E9 /* EssentialFeed.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45D4B66F2B24B9CB005321BB;
+			remoteInfo = EssentialFeedCacheInfrastructureTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -149,7 +181,9 @@
 			dstSubfolderSpec = 10;
 			files = (
 				45D4B5272B224141005321BB /* EssentialFeedAPI.framework in Embed Frameworks */,
+				45D4B6622B24B927005321BB /* EssentialFeedAPIInfrastructure.framework in Embed Frameworks */,
 				45D4B5BC2B224775005321BB /* EssentialFeedCache.framework in Embed Frameworks */,
+				45D4B68F2B24BA64005321BB /* EssentialFeedCacheInfrastructure.framework in Embed Frameworks */,
 				456EAEAA2A8796A800E085E9 /* EssentialFeed.framework in Embed Frameworks */,
 				456EAEAC2A8796A800E085E9 /* EssentialFeediOS.framework in Embed Frameworks */,
 				45D4B5BA2B22458E005321BB /* EssentialFeedPresentation.framework in Embed Frameworks */,
@@ -207,7 +241,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				45D4B5262B224141005321BB /* EssentialFeedAPI.framework in Frameworks */,
+				45D4B6612B24B927005321BB /* EssentialFeedAPIInfrastructure.framework in Frameworks */,
 				45D4B5BB2B224775005321BB /* EssentialFeedCache.framework in Frameworks */,
+				45D4B68E2B24BA64005321BB /* EssentialFeedCacheInfrastructure.framework in Frameworks */,
 				456EAEA92A8796A800E085E9 /* EssentialFeed.framework in Frameworks */,
 				456EAEAB2A8796A800E085E9 /* EssentialFeediOS.framework in Frameworks */,
 				45D4B5B92B22458E005321BB /* EssentialFeedPresentation.framework in Frameworks */,
@@ -296,16 +332,20 @@
 			children = (
 				456EAE972A87967400E085E9 /* EssentialFeed.framework */,
 				456EAE992A87967400E085E9 /* EssentialFeedTests.xctest */,
-				456EAE9B2A87967400E085E9 /* EssentialFeedAPIEndToEndTests.xctest */,
-				456EAE9D2A87967400E085E9 /* EssentialFeedCacheIntegrationTests.xctest */,
-				456EAE9F2A87967400E085E9 /* EssentialFeediOS.framework */,
-				456EAEA12A87967400E085E9 /* EssentialFeediOSTests.xctest */,
 				45D4B5232B224141005321BB /* EssentialFeedAPI.framework */,
 				45D4B5252B224141005321BB /* EssentialFeedAPITests.xctest */,
+				45D4B65E2B24B927005321BB /* EssentialFeedAPIInfrastructure.framework */,
+				45D4B6602B24B927005321BB /* EssentialFeedAPIInfrastructureTests.xctest */,
+				456EAE9B2A87967400E085E9 /* EssentialFeedAPIEndToEndTests.xctest */,
 				45D4B5B22B22458E005321BB /* EssentialFeedCache.framework */,
 				45D4B5B42B22458E005321BB /* EssentialFeedCacheTests.xctest */,
+				45D4B68B2B24BA63005321BB /* EssentialFeedCacheInfrastructure.framework */,
+				45D4B68D2B24BA63005321BB /* EssentialFeedCacheInfrastructureTests.xctest */,
+				456EAE9D2A87967400E085E9 /* EssentialFeedCacheIntegrationTests.xctest */,
 				45D4B5B62B22458E005321BB /* EssentialFeedPresentation.framework */,
 				45D4B5B82B22458E005321BB /* EssentialFeedPresentationTests.xctest */,
+				456EAE9F2A87967400E085E9 /* EssentialFeediOS.framework */,
+				456EAEA12A87967400E085E9 /* EssentialFeediOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -488,6 +528,34 @@
 			fileType = wrapper.cfbundle;
 			path = EssentialFeedPresentationTests.xctest;
 			remoteRef = 45D4B5B72B22458E005321BB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45D4B65E2B24B927005321BB /* EssentialFeedAPIInfrastructure.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EssentialFeedAPIInfrastructure.framework;
+			remoteRef = 45D4B65D2B24B927005321BB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45D4B6602B24B927005321BB /* EssentialFeedAPIInfrastructureTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = EssentialFeedAPIInfrastructureTests.xctest;
+			remoteRef = 45D4B65F2B24B927005321BB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45D4B68B2B24BA63005321BB /* EssentialFeedCacheInfrastructure.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = EssentialFeedCacheInfrastructure.framework;
+			remoteRef = 45D4B68A2B24BA63005321BB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		45D4B68D2B24BA63005321BB /* EssentialFeedCacheInfrastructureTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = EssentialFeedCacheInfrastructureTests.xctest;
+			remoteRef = 45D4B68C2B24BA63005321BB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

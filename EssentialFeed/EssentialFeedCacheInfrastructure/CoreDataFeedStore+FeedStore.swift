@@ -3,6 +3,7 @@
 //
 
 import CoreData
+import EssentialFeedCache
 
 extension CoreDataFeedStore: FeedStore {
 	

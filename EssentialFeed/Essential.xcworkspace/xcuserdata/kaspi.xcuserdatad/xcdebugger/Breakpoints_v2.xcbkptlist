@@ -7,32 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "879317E9-583D-47E8-A3EE-B271B4707EC6"
+            uuid = "84FB364B-40F8-48CE-BAD9-769E036D9B0C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EssentialFeedAPIEndToEndTests/EssentialFeedAPIEndToEndTests.swift"
+            filePath = "EssentialFeedCacheInfrastructure/CoreDataFeedStore.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "getFeedResult(file:line:)"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "init(storeURL:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BD99FB42-208D-4490-BAA8-A1207F66ED43"
+            uuid = "8873FAD4-B9CD-488C-A3DE-50119FEB5CED"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "EssentialFeediOS/Feed UI/Controllers/FeedViewController.swift"
+            filePath = "EssentialFeedCacheInfrastructure/CoreDataHelpers.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "display(_:)"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "with(name:in:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

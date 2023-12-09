@@ -72,6 +72,20 @@
         "identifier" : "08D917A722B92A5D003BC31B",
         "name" : "EssentialFeediOSTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:EssentialFeed.xcodeproj",
+        "identifier" : "45D4B6352B24B805005321BB",
+        "name" : "EssentialFeedAPIInfrastructureTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:EssentialFeed.xcodeproj",
+        "identifier" : "45D4B66E2B24B9CB005321BB",
+        "name" : "EssentialFeedCacheInfrastructureTests"
+      }
     }
   ],
   "version" : 1
